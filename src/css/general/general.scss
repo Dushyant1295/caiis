@@ -1,0 +1,85 @@
+:root {
+  --default: #f1f1f1;
+  
+  
+  --red: #FF1654;
+  --blue: #0D324D;
+  --cream: #F0F4EF;
+
+
+  --grid-padding: 7vw;
+  --section-padding: 9rem;
+
+  @include media(">=phone", "<=tablet") {
+    --grid-padding: 5vw;
+    --section-padding: 8rem;
+  }
+
+  @include media("<phone") {
+    --grid-padding: 4vw;
+    --section-padding: 7rem;
+  }
+
+  --cb-m1: cubic-bezier(0.23, 1, 0.32, 1);
+  --cb-m2: cubic-bezier(0, 0.96, 0.22, 1);
+  --cb-m3: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  --cb-m4: cubic-bezier(0.19, 1.51, 0.29, 0.99);
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-text-size-adjust: 100%;
+  -webkit-touch-callout: none; //MM
+  font-size: 100%;
+
+  @include media("<=tablet") {
+    scroll-behavior: smooth;
+  }
+
+  @include media(">tablet") {
+    font-size: calc(100vw / 1440 * 10);
+  }
+
+  @include media(">=phone", "<=tablet") {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+  @include media("<phone") {
+    font-size: calc(100vw / 496 * 10);
+  }
+
+  @media (min-width: 500px) and (max-width: 766px) {
+    font-size: calc(100vw / 992 * 10);
+  }
+
+  @media (orientation: landscape) and (max-height: 450px) {
+    font-size: calc(100vw / 992 * 10);
+  }
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision; //MM
+  overscroll-behavior: none; //G8
+  background-color: var(--blue);
+  color: #F0F4EF;
+  overflow-x: hidden;
+  font-family: "aeonik", sans-serif;
+  font-weight: 400;
+}
+
+::selection {
+  color: var(--red);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+section,
+div {
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

@@ -1,0 +1,135 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 3rem;
+  z-index: 99;
+  color: white;
+  // mix-blend-mode: difference;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.7s ease;
+
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul li {
+    display: inline;
+    list-style: none;
+    color: var(--red);
+  }
+
+  .header-logo {
+    svg {
+      fill: #fff;
+      height: 4.5rem;
+      width: 14rem;
+    }
+  }
+
+  .links {
+    a {
+      margin-left: 1.5rem;
+      line-height: 1.8rem;
+      font-weight: normal;
+    }
+  }
+
+  &.w-bg {
+
+    a,
+    li,
+    li a {
+      color: var(--red) !important;
+    }
+  }
+}
+
+.p-top {
+  padding-top: calc(var(--grid-padding) + 8rem);
+}
+
+@include media("<phone") {
+  .p-top {
+    padding-top: calc(var(--grid-padding) + 13rem) !important;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             For The Submenu 👇 👇 👇 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.hasDropdown {
+  padding-bottom: 1rem;
+  position: relative;
+
+  .dropdown-menu {
+    min-width: 20rem;
+    list-style: none;
+    position: absolute;
+    background: transparent;
+    top: 100%;
+    border-radius: 3px;
+    padding: 0rem;
+    left: 0;
+    opacity: 1;
+    visibility: hidden;
+    transition: 0.3s;
+    transform: scaleY(0);
+    transform-origin: top center;
+    text-align: left;
+    flex-direction: column;
+
+    li {
+      display: block;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      mix-blend-mode: difference;
+      color: white;
+      opacity: 0;
+      transition: all .2s ease;
+
+      a {
+        font-size: 1.5rem;
+        width: auto;
+        display: inline-block;
+        margin: 0 !important;
+        color: white;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: var(--red)
+        }
+      }
+    }
+  }
+
+  &:hover ul.dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+  }
+
+  &:hover ul.dropdown-menu li {
+    opacity: 1;
+    visibility: visible;
+
+    transition-delay: .2s;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        <ul>
+          <li class="hasDropdown">
+            Home
+            <ul class="dropdown-menu">
+              <li><a href="#dd">dropdown-menu</a></li>
+              <li><a href="#d">dropdown-menu</a></li>
+            </ul>
+          </li>
+          <li><a class="lineHover" href="pageColor.html">Page Color</a></li>
+          <li><a class="lineHover" href="hoversection.html">Hover</a></li>
+          <li><a class="lineHover" href="loco.html">Locomotive</a></li>
+       </ul>            
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

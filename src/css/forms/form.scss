@@ -1,0 +1,63 @@
+form.dpk-form {
+  --input-color: #fff;
+  --input-bg: #fff;
+  --submit-bg: #fff;
+  --submit-hover-bg: #fff;
+  --focus-color: #fff;
+
+  --border-radius: 0;
+
+  ::placeholder {
+    color: var(--input-color);
+    font-size: 1.5rem;
+    opacity: .6;
+  }
+
+  input,
+  select,
+  option,
+  textarea {
+    border: 1px solid var(--cream);
+    background-color: var(--blue);
+    color: var(--input-color);
+    font-size: 1.8rem;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+
+    @include media("<phone") {
+      padding: 2.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  @include media("<=tablet") {
+    ::placeholder {
+      font-size: 2rem;
+      
+    }
+  }
+
+
+  input[type="submit"] {
+    border: none;
+    padding: 0;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    display: inline-block;
+    width: auto;
+    border-bottom: 1px solid var(--red);
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+    color: var(--red);
+
+    &:hover {
+      color: #fff;
+
+    }
+  }
+
+  select:focus,
+  input:focus,
+  textarea:focus {
+    border-color: var(--red);
+  }
+}

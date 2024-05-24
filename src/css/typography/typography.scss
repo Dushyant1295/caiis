@@ -1,0 +1,137 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               Basic Typography Setting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+
+  div,
+  span {
+    font-weight: inherit;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+p,
+a,
+span {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 7rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 4rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+
+
+h6 {}
+
+p,
+li,
+a {
+  font-size: clamp(16px, 1.7rem, 17px);
+}
+p{
+  line-height: 1.4;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             Tablet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@include media(">=phone", "<=tablet") {
+  h1 {}
+
+  h2 {}
+
+  h3 {}
+
+  h4 {}
+
+  h5 {}
+
+  h6 {}
+
+  p {}
+
+  a {}
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             Phone
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@include media("<phone") {
+  h1 {
+    font-size: 7rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {}
+
+  h4 {}
+
+  h5 {}
+
+  h6 {}
+
+  p,
+  li,
+  a {
+    font-size: clamp(17px, 2rem, 18px);
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      Typography Util
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.text-upper {
+  text-transform: uppercase !important;
+}
+
+.add-stroke {
+  color: transparent !important;
+  -webkit-text-stroke: 1px lightgray;
+}
+
+.ul-b {
+  text-decoration: underline var(--default) 2px;
+}
+
+.first-letter:first-letter {
+  color: red;
+  float: left;
+  font-size: 400%;
+  line-height: 50%;
+  padding-right: 0.5rem;
+}
+
+.fw-bold {
+  font-weight: bold !important;
+}
+
+.lh-1 {
+  line-height: 1 !important;
+}

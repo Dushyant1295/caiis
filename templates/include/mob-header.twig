@@ -1,0 +1,59 @@
+<!-- <div class="load__container" id="loading__main">
+	<div class="loader__curve">
+		<svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+			<path fill="#fff" class="bluee" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+		</svg>
+	</div>
+	<div class="load__inner">
+		<div class="loading-text">
+			<span>C</span><span>A</span><span>I</span><span>I</span><span>S</span>
+			<span> - </span>
+			<span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>i</span><span>v</span><span>e</span>
+			<span> </span>
+			<span>A</span><span>I</span>
+			<span> </span>
+			<span>I</span><span>n</span><span>t</span><span>e</span><span>g</span><span>r</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span>
+			<span> </span>
+			<span>S</span><span>p</span><span>e</span><span>c</span><span>i</span><span>a</span><span>l</span><span>i</span><span>s</span><span>t</span><span>s</span>
+		</div>
+	</div>
+</div> -->
+
+<div class="menu d-sm">
+	<input type="checkbox" id="trigger" class="mob-menu-trigger" />
+	<label for="trigger" class="menu-close"></label>
+
+	<div class="mob-menu">
+
+		<ul>
+			{% for item in menu.items %}
+				<li>					
+					<a class="linehover"  href="{{ item.link }}">{{ item.title }}</a>
+
+						{% if item.children %} 
+
+							<ul class="submenu">
+								{% for child in item.children %}
+								<li>	<a href="{{ child.link }}" {{ child.attr_title }}>{{ child.title }}</a> </li>
+								{% endfor %}
+ 
+							</ul>
+
+						{% endif %}
+			</li>
+			{% endfor %}
+		</ul>
+
+		
+		 
+
+		<div class="m-social">
+			<a href="#" class="linehover me-5"> Instagram </a>
+			<a href="#" class="linehover"> LinkedIn </a>
+		</div>
+	</div>
+</div>
+
+
+
+ 

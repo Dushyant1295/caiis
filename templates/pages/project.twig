@@ -1,0 +1,259 @@
+{% extends "base.twig" %} {% block content %}
+{% include 'include/header.twig'%}
+
+
+<div data-scroll-container>
+
+
+
+    <section class="sb p-top bg-white">
+        {% set h_title = post.get_field('project_title') %}
+        {% set h_logo = post.get_field('project_logo') %}
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 pb-6">
+                    <img src="{{ h_logo.url}}" alt="{{ h_logo.alt}}" />
+                </div>
+                <div class="col-lg-5 text-blue" data-dpk-call="appearTitle">
+                    <h4>
+                        {{h_title}}
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    {% set p_hero_img = post.get_field('project_hero_img') %}
+    {% if p_hero_img %}
+    <section class="section-2 bg-white">
+        <div data-dpk-call="imgR">
+            <div class="reveal">
+                <img src="{{ p_hero_img.url}}" alt="{{ p_hero_img.alt}}" />
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+
+
+
+
+
+
+
+    {% set p_hero_desc = post.get_field('project_hero_description') %}
+
+    <section class="bg-cream sy">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 text-blue tiny-editor">
+                    {{ p_hero_desc }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sb">
+
+
+        {% set s3_image_1 = post.get_field('s3_image_2') %}
+        {% set s3_image_2 = post.get_field('s3_image_2') %}
+
+        <div class="container pt-lg-8 px-sm-0">
+            <div class="row pb-7">
+                <div class="col-lg-6">
+                    <div data-dpk-call="imgL">
+                        <div class="reveal">
+                            <img src="{{ s3_image_1.url}}" alt="{{ s3_image_1.alt}}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div data-dpk-call="imgRight">
+                        <div class="reveal">
+                            <img src="{{ s3_image_2.url}}" alt="{{ s3_image_2.alt}}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            {% set s3_desc = post.get_field('s3_description') %}
+            <div class="row justify-content-center">
+                <div class="col-lg-4 tiny-editor">
+                    {{ s3_desc }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="sb">
+        <div class="container project-s">
+            <div class="row">
+                <div class="col-lg-12 position-relative">
+
+                    {% set s1_img_1 = post.get_field('slider1_img_1') %}
+                    {% set s1_img_2 = post.get_field('slider1_img_2') %}
+                    {% set s1_img_3 = post.get_field('slider1_img_3') %}
+                    {% set s1_img_4 = post.get_field('slider1_img_4') %}
+                    {% set s1_img_5 = post.get_field('slider1_img_5') %}
+
+                    <div class="slider pb-lg-8" data-slides="1">
+                        <div class="swiper">
+                            <div class="swiper-wrapper pb-6">
+                                <div class="swiper-slide">
+                                    <div data-dpk-call="imgL">
+                                        <div class="reveal">
+                                            <img src="{{ s1_img_1.url}} " alt="{{s1_img_1.alt}}" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% if s1_img_2 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ s1_img_2.url}} " alt="{{s1_img_2.alt}}" />
+                                </div>
+                                {% endif %}
+
+                                {% if s1_img_3 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ s1_img_3.url}} " alt="{{s1_img_3.alt}}" />
+                                </div>
+                                {% endif %}
+
+
+                                {% if s1_img_4 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ s1_img_4.url}} " alt="{{s1_img_4.alt}}" />
+                                </div>
+                                {% endif %}
+
+                                {% if s1_img_5 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ s1_img_5.url}} " alt="{{s1_img_5.alt}}" />
+                                </div>
+                                {% endif %}
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pt-5 justify-content-center">
+                {% set slider1_desc = post.get_field('slider1_description') %}
+                <div class="col-lg-4 tiny-editor">
+                    {{ slider1_desc }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="sb slider-section-2">
+        <div class="container">
+
+            {% set s4_title1 = post.get_field('slider2_title_1') %}
+            {% set s4_title2 = post.get_field('slider2_title_2') %}
+
+            {% set s2_img_1 = post.get_field('slider2_img_1') %}
+            {% set s2_img_2 = post.get_field('slider2_img_2') %}
+            {% set s2_img_3 = post.get_field('slider2_img_3') %}
+            {% set s2_img_4 = post.get_field('slider2_img_4') %}
+            {% set s2_img_5 = post.get_field('slider2_img_5') %}
+
+            {% set slider_cta = post.get_field('slider4_cta') %}
+
+
+            <div class="col-lg-7 pb-10" data-dpk-call="appearTitle">
+                <h3>
+                    {{ s4_title1 }}
+                </h3>
+            </div>
+        </div>
+        <div class="container project-s project-sm-view">
+
+
+
+
+            <div class="row">
+                <div class="col-lg-9 offset-lg-3 position-relative">
+                    <div class="slider pb-lg-8" data-slides="1">
+                        <div class="swiper">
+                            <div class="swiper-wrapper pb-5">
+                                <div class="swiper-slide">
+                                    <div data-dpk-call="imgL">
+                                        <div class="reveal">
+                                            <img src="{{ s2_img_1.url}} " alt="{{s1_img_2.alt}}" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% if s2_img_2 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ s2_img_2.url}} " alt="{{s2_img_2.alt}}" />
+                                </div>
+                                {% endif %}
+
+                                {% if s2_img_3 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ s2_img_3.url}} " alt="{{s2_img_3.alt}}" />
+                                </div>
+                                {% endif %}
+
+
+                                {% if s2_img_4 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ s2_img_4.url}} " alt="{{s2_img_4.alt}}" />
+                                </div>
+                                {% endif %}
+
+                                {% if s2_img_5 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ s2_img_5.url}} " alt="{{s2_img_5.alt}}" />
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="slider-title pt-6 pt-lg-0" data-dpk-call="appearTitle">
+                        <h4>
+                            {{ s4_title2 }}
+                        </h4>
+
+
+
+                        {% if slider_cta.title %}
+                        <a href="{{slider_cta.url}}" target="{{ slider_cta.target ? '_blank' : '_self' }}"
+                            class="mt-5 linehover appear-y dl-4" data-dpk-call>{{ slider_cta.title }}</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {% include 'include/footer.twig'%}
+</div>
+{% endblock %}

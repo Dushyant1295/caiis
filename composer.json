@@ -1,0 +1,19 @@
+{
+  "name": "caiis/caiis-next",
+  "type": "wordpress-theme",
+  "description": "caiis 2024",
+  "require": {
+    "timber/timber": "^2.0"
+  },
+  "authors": [
+    {
+      "name": "CAIIS",
+      "email": "remy@bernedesigns.com"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
+}

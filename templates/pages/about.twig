@@ -1,0 +1,235 @@
+{% extends "base.twig" %} {% block content %}
+{% include'include/header-w.twig'%}
+
+<div data-scroll-container>
+    <section class="sb p-top">
+
+        {% set a_title = post.get_field('about_title') %}
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 pb-5 pb-lg-0" data-dpk-call="appearTitle">
+                    <h1>
+                        {{a_title}}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-2">
+        <div data-dpk-call="imgR">
+            <div class="reveal">
+                {% set a_img = post.get_field('about_img') %}
+                <img src="{{ a_img.url}}" alt="{{ a_img.alt}}" />
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-cream sy">
+
+        {% set c_title = post.get_field('c_title') %}
+        {% set c_desc = post.get_field('c_description') %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 order-2 order-lg-1 pb-4 pb-lg-0" data-dpk-call="appearTitle">
+                    <h2 class="crafting text-white">
+
+                        {{ c_title }}
+
+                    </h2>
+                </div>
+
+                <div class="col-lg-4 pt-6 text-blue order-1 order-lg-2 pb-lg-0 pb-8">
+                    {{ c_desc }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sy">
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                {% set fea_desc = post.get_field('fea_description') %}
+                {{ fea_desc }}
+            </div>
+
+            <div class="slider client sy" data-slides="2">
+                <div class="swiper text-center">
+                    <div class="swiper-wrapper pb-5">
+                        <div class="swiper-slide">
+                            <div class="row justify-content-center">
+
+                                {% set flogo_1 = post.get_field('f_img_1') %}
+                                {% set flogo_2 = post.get_field('f_img_2') %}
+                                {% set flogo_3 = post.get_field('f_img_3') %}
+                                {% set flogo_4 = post.get_field('f_img_4') %}
+                                {% set flogo_5 = post.get_field('f_img_5') %}
+                                {% set flogo_6 = post.get_field('f_img_6') %}
+                                {% set flogo_7 = post.get_field('f_img_7') %}
+                                {% set flogo_8 = post.get_field('f_img_8') %}
+                                {% set flogo_9 = post.get_field('f_img_9') %}
+                                {% set flogo_10 = post.get_field('f_img_10') %}
+                                {% set flogo_11 = post.get_field('f_img_11') %}
+                                {% set flogo_12 = post.get_field('f_img_12') %}
+
+                                {% if flogo_1 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_1.url }}" alt="{{ flogo_1.alt }}" />
+                                </div>
+                                {% endif %}
+
+                                {% if flogo_2 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_2.url }}" alt="{{ flogo_2.alt }}" />
+                                </div>
+                                {% endif %}
+
+
+
+
+
+                                {% if flogo_5 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_5.url }}" alt="{{ flogo_5.alt }}" />
+                                </div>
+                                {% endif %}
+
+                                {% if flogo_6 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_6.url }}" alt="{{ flogo_6.alt }}" />
+                                </div>
+                                {% endif %}
+
+                               
+                                {% if flogo_9 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_9.url }}" alt="{{ flogo_9.alt }}" />
+                                </div>
+                                {% endif %}
+
+                                {% if flogo_10 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_10.url }}" alt="{{ flogo_10.alt }}" />
+                                </div>
+                                {% endif %}
+
+                              
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="row justify-content-center">
+                                {% if flogo_3 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_3.url }}" alt="{{ flogo_3.alt }}" />
+                                </div>
+                                {% endif %}
+
+                                {% if flogo_4 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_4.url }}" alt="{{ flogo_4.alt }}" />
+                                </div>
+                                {% endif %}
+
+
+                                {% if flogo_7 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_7.url }}" alt="{{ flogo_7.alt }}" />
+                                </div>
+                                {% endif %}
+
+                                {% if flogo_8 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_8.url }}" alt="{{ flogo_8.alt }}" />
+                                </div>
+                                {% endif %}
+
+
+                                {% if flogo_11 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_11.url }}" alt="{{ flogo_11.alt }}" />
+                                </div>
+                                {% endif %}
+
+                                {% if flogo_12 %}
+                                <div class="col-6">
+                                    <img src="{{ flogo_12.url }}" alt="{{ flogo_12.alt }}" />
+                                </div>
+                                {% endif %}
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sb">
+        <div class="container project-s px-sm-0">
+            <div class="row">
+
+                {% set as1_img_1 = post.get_field('aslider2_img_1') %}
+                {% set as1_img_2 = post.get_field('aslider2_img_2') %}
+                {% set as1_img_3 = post.get_field('aslider2_img_3') %}
+                {% set as1_img_4 = post.get_field('aslider2_img_4') %}
+                {% set as1_img_5 = post.get_field('aslider2_img_5') %}
+
+
+                <div class="col-lg-12 position-relative">
+                    <div class="slider pb-lg-8" data-slides="1">
+                        <div class="swiper">
+                            <div class="swiper-wrapper pb-5">
+                                <div class="swiper-slide">
+                                    <div data-dpk-call="imgL">
+                                        <div class="reveal">
+                                            <img src="{{ as1_img_1.url }} " alt="{{as1_img_1.alt }}" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% if as1_img_2 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ as1_img_2.url}} " alt="{{as1_img_2.alt}}" />
+                                </div>
+                                {% endif %}
+
+                                {% if as1_img_3 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ as1_img_3.url}} " alt="{{as1_img_3.alt}}" />
+                                </div>
+                                {% endif %}
+
+
+                                {% if as1_img_4 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ as1_img_4.url}} " alt="{{as1_img_4.alt}}" />
+                                </div>
+                                {% endif %}
+
+                                {% if as1_img_5 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ as1_img_5.url}} " alt="{{as1_img_5.alt}}" />
+                                </div>
+                                {% endif %}
+                                 
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'include/footer.twig'%}
+</div>
+{% endblock %}
